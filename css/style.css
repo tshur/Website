@@ -1,0 +1,55 @@
+h1, h2 {
+	color: FireBrick;
+	font-family: 'Josefin Slab', serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+p, li, a {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #333;
+}
+
+p + ul {
+	margin-top: -9px;
+}
+
+body {
+	background-color: #ECECEC;
+}
+
+strong {
+	font-weight: bold;
+	color: #222;
+}
+
+.container {
+	font-size: 115%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.block {
+	background-color: #FFF;
+	border: 1px solid #BBB;
+	border-radius: 2px;
+	box-shadow: 5px 5px 3px #9999A5;
+	padding: 20px;
+	padding-right: 10%;
+	padding-left: 10%;
+	margin: 20px;
+	margin-left: 8%;
+	margin-right: 8%;
+	display: none;
+}
+
+.header {
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+	display: none;
+}
