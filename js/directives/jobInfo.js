@@ -2,8 +2,8 @@ app.directive('jobInfo', function() {
 	return {
 		restrict: 'E',
 		scope: {
-			info: '='
+			job: '='
 		},
-		templateUrl: 'js/directives/jobInfo.html'
+		templateUrl: 'Website/js/directives/jobInfo.html'
 	};
 });

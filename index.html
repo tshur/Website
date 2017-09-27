@@ -2,104 +2,137 @@
 <html lang="en">
 <head>
 	<title> Timothy Shur </title>
+
 	<!-- Angular JS CDN link -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
+	<!-- Meta Information -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Bootstrap CDN link -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Bootstrap CDN links -->
+	<link rel="stylesheet" href="https://maaxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- Josefin Slab & Sans font families -->
   	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab" rel="stylesheet">
 
-  	<link href="css/style.css" type="text/css" rel="stylesheet">
+	<!-- Main stylesheet -->
+  	<link href="Website/css/style.css" type="text/css" rel="stylesheet">
 
   	<!-- p5.js CDN link-->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js"></script>
-  	<script src="js/p5/sketch.js" type="text/javascript"></script>
+	<!-- <script src="js/p5/sketch.js" type="text/javascript"></script> -->
 </head>
+
 <body ng-app="myApp">
-	<div class="container">
+	<div class="container" id="top">
 		<div class="header">
-			<div class="block">
+			<div class="block" id="name">
 				<h1> Timothy Shur </h1>
-				<p> 500 El Camino Real <br /> Santa Clara, CA 95053-2364 <br /> (425) 877-6587 <br />
-				tshur@scu.edu &mdash; <a href="http://www.github.com/tshur"> github </a> &mdash; <a href="http://linkedin.com/in/timshur"> Linkedin </a> </p>
+				<p> 350 Elan Village Ln <br /> San Jose, CA 95134 <br /> (425) 877-6587 <br />
+				<a href="mailto:tim.shur@gmail.com">tim.shur@gmail.com</a> &mdash; <a href="http://www.github.com/tshur">github</a> &mdash; <a href="http://linkedin.com/in/timshur">	Linkedin</a> </p>
 			</div>
 		</div>
 		<div class="main" ng-controller="MainController">
-			<div class="block">
+			<div class="block" id="education">
 				<h2> Education </h2>
 				<p> Santa Clara University, Santa Clara, CA <br />
-					Majors in Computer Science &amp; Engineering (4.00) and Mathematics (4.00) <br />
-					University Honors Program <br />
-					Dean's List 2015-2016 <br />
-					Cumulative GPA: 3.96 </p>
+					Double Major: Computer Science &amp; Engineering; Mathematics <br />
+					Cumulative GPA: 3.97; University Honors Program <br />
+					Expected Graduation: June 2019
+				</p>
 			</div>
 
-			<div class="block">
+			<div class="block" id="skills">
 				<h2> Skills </h2>
 				<p> Programming Languages: </p>
 				<ul>
-					<li> C (preferred) </li>
-					<li> Java </li>
+					<li> C/C++ (most preferred) </li>
+					<li> Python </li>
 					<li> Javascript </li>
+					<li> Java </li>
 					<li> C# (some experience) </li>
 				</ul>
 
 				<p> Experience with: </p>
 				<ul>
-					<li> Unity Platform </li>
-					<li> iOS App Development </li>
-					<li> HTML5 and CSS3 </li>
-					<li> AngularJS 1.x </li>
-					<li> jQuery </li>
-					<li> Bootstrap </li>
-					<li> MATLAB </li>
-					<li> LaTeX </li>
-					<li> Unix/Terminal </li>
+					<li> Machine Learning: TensorFlow, MATLAB </li>
+					<li> Front-end Web Development </li>
+					<li> Embedded Systems </li>
+					<li> Generative Art & Animation: Processing 3, p5.js </li>
+					<li> Git: GitHub, BitBucket </li>
+					<li> UNIX/Terminal: Vim, Bash </li>
+					<li> Unity Platform: Augmented Reality, Vuforia </li>
+				</ul>
+
+				<p> Relevant Coursework: </p>
+				<ul>
+					<li> Formal Specification & Advanced Data Structures (4.0) </li>
+					<li> Theory of Algorithms (4.0) </li>
+					<li> Problem Solving Seminar </li>
+					<li> Computer Networks </li>
 				</ul>
 			</div>
 
-			<div class="block">
-				<h2> Experience </h2>
-				<div ng-repeat="job in jobs">	
-					<job-info info="job"> </job-info>
+			<div class="block" id="experience">
+				<h2> Work Experience </h2>
+				<div ng-repeat="job in jobs">
+					<job-info job="job"> </job-info>
 				</div>
 			</div>
 
-			<div class="block">
-				<h2> Activities </h2>
+			<div class="block" id="projects">
+				<h2> Projects </h2>
+				<div ng-repeat="project in projects">
+					<proj-info project="project"> </proj-info>
+				</div>
+			</div>
+
+			<div class="block" id="involvement">
+				<h2> Involvement </h2>
 				<ul>
-					<li ng-repeat="activity in activities"> {{ activity }} </li>
+					<li ng-repeat="involve in involvement"> {{ involve }} </li>
 				</ul>
 			</div>
 
-			<div class="block">
-				<h2> Hobbies </h2>
+			<div class="block" id="honors">
+				<h2> Honors and Awards </h2>
 				<ul>
-					<li ng-repeat="hobby in hobbies"> {{ hobby }} </li>
+					<li> Dean’s List 2015-2016, 2016-2017 (top 10% GPA at SCU) </li>
+					<li> George W. Evans II Memorial Prize (top Putman score at SCU) </li>
+					<li> Multimodal Writing Prize [<a href="http://rlcordorm.weebly.com/">website link</a>] </li>
+					<li> Kuehler Summer Research Grant (for Kuehler research) </li>
+					<li> KEEN “Creating Value” Poster Award (for Kuehler research) </li>
 				</ul>
 			</div>
+
+			<!-- INTERESTS
+			<div class="block">
+				<h2> Interests </h2>
+				<ul>
+					<li ng-repeat="interest in interests"> {{ interest }} </li>
+				</ul>
+			</div>
+			-->
 		</div>
-		<div class="footer">
+		<div class="footer" id="bottom">
 			<p> The content of these web pages is not generated by and does not represent the views of Santa Clara University or any of its departments or organizations. </p>
+
 			<!-- Modules -->
-			<script src="js/app.js"></script>
+			<script src="Website/js/app.js" type="text/javascript"></script>
 
 			<!-- Controllers -->
-			<script src="js/controllers/MainController.js"></script>
+			<script src="Website/js/controllers/MainController.js" type="text/javascript"></script>
 
 			<!-- Directives -->
-			<script src="js/directives/jobInfo.js"></script>
+			<script src="Website/js/directives/jobInfo.js" type="text/javascript"></script>
+			<script src="Website/js/directives/projInfo.js" type="text/javascript"></script>
 
 			<!-- JQuery and Javascript -->
-			<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
-			<script src="js/main.js"></script>
+			<script src='https://code.jquery.com/jquery-3.1.0.min.js' type="text/javascript"></script>
+			<script src="Website/js/main.js" type="text/javascript"></script>
 		</div>
 	</div>
 </body>
